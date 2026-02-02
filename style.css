@@ -1,0 +1,127 @@
+:root {
+    --primary: #ff5e00;
+    --primary-dark: #e65100;
+    --accent: #ffeb3b;
+    --dark: #1a1a1a;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background: #f4f7f6;
+    color: var(--dark);
+    scroll-behavior: smooth;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ШАПКА С ЭФФЕКТОМ */
+.header {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.header__inner { display: flex; justify-content: space-between; align-items: center; }
+
+.logo-text { font-size: 28px; font-weight: 900; color: var(--primary); display: block; line-height: 1; }
+.logo-sub { font-size: 10px; letter-spacing: 2px; font-weight: 700; }
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 700;
+    margin: 0 15px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav-link:hover { color: var(--primary); }
+.nav-link::after {
+    content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
+    background: var(--primary); transition: 0.3s;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ГЛАВНЫЙ ЭКРАН */
+.hero {
+    height: 80vh;
+    background: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80') center/cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(255, 94, 0, 0.3));
+}
+
+.hero__content { position: relative; z-index: 2; }
+
+h1 { font-size: 3.5rem; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+h1 span { color: var(--accent); }
+
+/* ЦЕНЫ В СТИЛЕ ПЛАШЕК */
+.price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+
+.price-card {
+    background: var(--primary);
+    color: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(255, 94, 0, 0.3);
+    transition: 0.3s;
+}
+
+.price-card:hover { transform: translateY(-10px); }
+
+.price-card h3 { border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 15px; }
+
+.price-card ul { list-style: none; padding: 0; }
+
+.price-card li {
+    display: flex; justify-content: space-between;
+    padding: 10px 0; border-bottom: 1px dashed rgba(255,255,255,0.2);
+}
+
+/* СЛАЙДЕР ОТЗЫВОВ */
+.slider { position: relative; overflow: hidden; max-width: 800px; margin: 0 auto; }
+.slides { display: flex; transition: 0.5s; }
+.slide-card {
+    min-width: 100%; background: white; padding: 40px;
+    border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;
+}
+
+/* КНОПКИ */
+.btn {
+    padding: 15px 35px; border-radius: 50px; border: none; font-weight: 800;
+    cursor: pointer; transition: 0.3s; text-transform: uppercase;
+}
+.btn--main { background: var(--primary); color: white; }
+.btn--main:hover { background: var(--primary-dark); box-shadow: 0 0 20px var(--primary); }
+
+.pulse { animation: pulse-animation 2s infinite; }
+@keyframes pulse-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* МОДАЛКА */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; z-index: 2000;
+}
+.modal {
+    background: white; padding: 50px; border-radius: 30px; position: relative;
+    width: 400px; text-align: center; animation: modalIn 0.3s;
+}
+@keyframes modalIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }

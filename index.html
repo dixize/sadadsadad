@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEZDRY — Профессиональная Дезинфекция</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__inner">
+            <div class="logo">
+                <span class="logo-text">DEZDRY</span>
+                <span class="logo-sub">ДЕЗИНФЕКЦИЯ</span>
+            </div>
+            <nav class="nav">
+                <a href="#prices" class="nav-link">Цены</a>
+                <a href="#reviews" class="nav-link">Отзывы</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+            </nav>
+            <div class="header__btns">
+                <a href="https://t.me/your_bot" target="_blank" class="social-btn tg">TG</a>
+                <a href="https://wa.me/79000000000" target="_blank" class="social-btn wa">WA</a>
+                <button class="btn btn--call" onclick="openModal()">Позвонить</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero__content">
+            <div class="badge">Обработка от 1000₽</div>
+            <h1>Уничтожение вредителей <br><span>с гарантией 1000%</span></h1>
+            <p>Избавим от тараканов, клопов и грызунов за 1 выезд в Москве и МО.</p>
+            <button class="btn btn--main pulse" onclick="scrollToSection('prices')">Выбрать услугу</button>
+        </div>
+    </section>
+
+    <section id="prices" class="prices-section">
+        <div class="container">
+            <h2 class="section-title">Наши цены</h2>
+            <div class="price-grid">
+                <div class="price-card">
+                    <h3>Дезинсекция (насекомые)</h3>
+                    <ul>
+                        <li>Комната <span>от 1 500 ₽</span></li>
+                        <li>1-к квартира <span>от 2 000 ₽</span></li>
+                        <li>2-к квартира <span>от 2 500 ₽</span></li>
+                        <li>3-к квартира <span>от 3 000 ₽</span></li>
+                    </ul>
+                    <button class="btn btn--small" onclick="openModal()">Заказать</button>
+                </div>
+                <div class="price-card">
+                    <h3>Дератизация (грызуны)</h3>
+                    <ul>
+                        <li>До 100 м² <span>от 5 000 ₽</span></li>
+                        <li>100-400 м² <span>от 6 000 ₽</span></li>
+                        <li>400-800 м² <span>от 26/м² ₽</span></li>
+                    </ul>
+                    <button class="btn btn--small" onclick="openModal()">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">Отзывы клиентов</h2>
+            <div class="slider">
+                <div class="slides" id="slides">
+                    <div class="slide-card">
+                        <img src="https://via.placeholder.com/80" alt="Аватар">
+                        <p>"Денис избавил меня от тараканов очень быстро!"</p>
+                        <strong>Юрий Сурков ★★★★★</strong>
+                    </div>
+                    <div class="slide-card">
+                        <img src="https://via.placeholder.com/80" alt="Аватар">
+                        <p>"Специалисты знают свое дело, рекомендую."</p>
+                        <strong>Зоя Сподина ★★★★★</strong>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <button onclick="moveSlide(-1)">❮</button>
+                    <button onclick="moveSlide(1)">❯</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
